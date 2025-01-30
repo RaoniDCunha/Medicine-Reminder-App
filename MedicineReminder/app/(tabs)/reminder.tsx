@@ -5,7 +5,7 @@ import { Image, StyleSheet, Platform,View,Text } from 'react-native';
 
 
 
-export default function LoginScreen() {
+export default function ReminderScreen() {
   return (
     <View style={{ flex: 1 }}>
       <Text style={{ fontFamily: Fonts.heading.fontFamily, fontSize: Fonts.heading.size, lineHeight: Fonts.heading.lineHeight, color: Colors.mainColors.redBase }}>ddd</Text>

@@ -14,7 +14,11 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    NunitoSansRegular: require('../assets/fonts/NunitoSans_7pt-Regular.ttf'),
+    NunitoSansBold: require('../assets/fonts/NunitoSans_7pt-Bold.ttf'),
+    NunitoSansSemiBold: require('../assets/fonts/NunitoSans_7pt-SemiBold.ttf'),
+    NunitoSansExtraBold: require('../assets/fonts/NunitoSans_7pt-ExtraBold.ttf'),
+
   });
 
   useEffect(() => {
