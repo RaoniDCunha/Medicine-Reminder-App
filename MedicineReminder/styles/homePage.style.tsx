@@ -5,7 +5,7 @@ import styled from 'styled-components/native';
 export const HomePageContainerTop = styled.View`
   flex: 1;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background-color: ${Colors.GrayscaleColors.gray600}; 
 `;
 
@@ -20,11 +20,14 @@ export const HomePageContainerBottom = styled.View`
   justify-content: center;
   overflow: hidden;
   margin-top: -20px;
+  margin-bottom: 14px;
+  padding-left: 16px;
+  padding-right: 16px;
 `;
 
-export const ContainerBottomColumn = styled.View`
+export const HomeContainerBottomColumn = styled.View`
   flex: 1;
-  align-items: flex-start;
+  align-items: center;
   padding: 20px;
   justify-content: center;
   flex-direction: column;
@@ -34,10 +37,33 @@ export const ContainerBottomColumn = styled.View`
 
 export const Title = styled.Text`
   font-size: ${Fonts.subheading.size}px;
-  font-family: ${Fonts.subheading.fontFamily};
-  height: ${Fonts.subheading.lineHeight}px;
-  color: ${Colors.GrayscaleColors.gray100}; 
-  margin-bottom: 40px;
-  margin-top: 20px;
+  font-family: ${Fonts.body.fontFamily};
+  line-height: ${Fonts.body.lineHeight}px;
+  color: ${Colors.GrayscaleColors.gray200};
+  margin-bottom: 5px;
 `;
 
+export const TitleName = styled.Text`
+  font-size: ${Fonts.heading.size}px;
+  font-family: ${Fonts.heading.fontFamily};
+  line-height: ${Fonts.heading.lineHeight}px;
+  color: ${Colors.GrayscaleColors.gray100}; 
+`;
+
+export const UserPortrait = styled.View`
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1.5px solid ${Colors.mainColors.blueBase};
+  margin-bottom: 20px;
+`;
+
+export const TitleUserColumn = styled.View`
+  flex: 1;
+  align-items: flex-start;
+  padding: 20px;
+  justify-content: center;
+  flex-direction: column;
+`;
