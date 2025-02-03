@@ -2,16 +2,17 @@ import { Colors } from "@/constants/Colors";
 import { Fonts } from "@/constants/Fonts";
 import styled from "styled-components/native";
 
-export const ButtonContainer = styled.TouchableOpacity`
+export const ButtonContainer = styled.View<{ backgroundColor?: string }>`
   height: 56px;
   width: 100%;
-  background-color: ${Colors.mainColors.redBase};
+  background-color: ${({ backgroundColor }: { backgroundColor?: string }) => backgroundColor || Colors.mainColors.redBase};
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding: 0 10px;
+ 
   border-radius: 50px;
+  gap: 12px;
+  flex-direction: row;
 `;
 
 export const ButtonText = styled.Text`

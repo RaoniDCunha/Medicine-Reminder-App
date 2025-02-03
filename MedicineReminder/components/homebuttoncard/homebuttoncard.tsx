@@ -1,7 +1,8 @@
 import { Colors } from '@/constants/Colors';
 import { Fonts } from '@/constants/Fonts';
 import { Image, StyleSheet, Platform,View,Text, TouchableOpacity } from 'react-native';
-import { HomeButtonCardContainer, HomeImageContainer, HomeTextBody, HomeTextContainer, HomeTextTitle } from './homebuttoncard.style';
+import { HomeButtonCardContainer, HomeIconContainer, HomeImageContainer, HomeTextBody, HomeTextContainer, HomeTextTitle } from './homebuttoncard.style';
+import { ChevronRight } from 'lucide-react-native';
 
 
 interface HomeButtonCardProps {
@@ -29,6 +30,9 @@ export default function HomeButtonCard({ onPress, title, description, image }: H
         <HomeTextTitle>{title}</HomeTextTitle>
         <HomeTextBody>{description}</HomeTextBody>
       </HomeTextContainer>
+      <HomeIconContainer>
+        <ChevronRight size={20} color={Colors.GrayscaleColors.gray400} />
+      </HomeIconContainer>
     </HomeButtonCardContainer>
     </TouchableOpacity>
     

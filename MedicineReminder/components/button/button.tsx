@@ -8,16 +8,19 @@ import React from 'react';
 interface ButtonProps {
     onPress: () => void;
     children?: React.ReactNode
+    backgroundColor?: string
 }
 
-export default function Button({onPress,children}: ButtonProps) {
+export default function Button({onPress,children, backgroundColor}: ButtonProps) {
 
   return (
-    <ButtonContainer>
-        <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={onPress} style={{width: '100%'}}>
+    <ButtonContainer backgroundColor={backgroundColor}>
+        
         {children}
-        </TouchableOpacity>
+        
     </ButtonContainer>
+    </TouchableOpacity>
   );    
 }
 
@@ -32,7 +35,11 @@ function IconButton({icon}: IconButtonProps) {
 
     return (
       
-            <ButtonText>Entrar</ButtonText>
+            <View style={{alignItems: 'center',justifyContent: 'center'}}>
+                {icon}
+            </View>
+                
+            
     );    
   }
 

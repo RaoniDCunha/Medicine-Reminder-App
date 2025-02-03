@@ -12,6 +12,7 @@ export const HomeButtonCardContainer = styled.View`
   border: 1px solid ${Colors.GrayscaleColors.gray600};
   background-color: ${Colors.GrayscaleColors.gray700};
   border-radius: 12px;
+  padding: 16px;
 `;
 
 export const HomeImageContainer = styled.View`
@@ -21,7 +22,6 @@ export const HomeImageContainer = styled.View`
   height: 88px;
   background-color: ${Colors.GrayscaleColors.gray600};
   border-radius: 12px;
-  margin-left: 16px;
 `;
 
 export const HomeTextContainer = styled.View`
@@ -33,13 +33,20 @@ export const HomeTextContainer = styled.View`
   margin-left: 8px;
 `;
 
+export const HomeIconContainer = styled.View`
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  
+`;
+
 
 export const HomeTextTitle = styled.Text`
   font-size: ${Fonts.subheading.size}px;
   font-family: ${Fonts.subheading.fontFamily};
   line-height: ${Fonts.subheading.lineHeight}px;
   color: ${Colors.GrayscaleColors.gray100};
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 `;
 
 export const HomeTextBody = styled.Text`

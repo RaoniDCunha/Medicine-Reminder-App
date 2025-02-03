@@ -24,18 +24,24 @@ export const PasswordTextInputBox = styled.View`
   border-radius: 5px;
   border-width: 1px;
   border-color: ${Colors.GrayscaleColors.gray400};
+  flex-direction: row;
   
 `;
 
 export const PasswordTextInput = styled.TextInput`
-  width: 100%;
+  width: 90%;
   font-size: ${Fonts.input.size}px;
   font-family: ${Fonts.input.fontFamily};
   line-height: ${Fonts.input.lineHeight}px;
   color: ${Colors.GrayscaleColors.gray200};
   padding: 16px;
-  
 `;
 
+
+export const PasswordTextInputIconView = styled.TouchableOpacity`
+  align-items: center;
+  justify-content: center;
+  
+`;
 
 
