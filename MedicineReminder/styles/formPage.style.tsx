@@ -37,12 +37,20 @@ export const FormContainerTopColumn = styled.View`
 
 export const FormContainerBottomColumn = styled.View`
   flex: 1;
-  align-items: center;
-  padding: 20px;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  min-height: 400px;
+  min-height: 339px;
+`;
+
+export const FormColumn = styled.View`
+  flex: 1;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  min-height: 339px;
 `;
 
 export const FormDescription = styled.Text`

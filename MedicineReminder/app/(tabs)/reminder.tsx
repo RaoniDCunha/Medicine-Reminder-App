@@ -7,7 +7,7 @@ import { ReminderContainerBottomColumn, ReminderContainerTopColumn, ReminderDesc
 import { useRouter } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import { useEffect, useState } from 'react';
-import { Image, StyleSheet, Platform,View,Text, TouchableOpacity, FlatList } from 'react-native';
+import { Image, StyleSheet, Platform,View,Text, TouchableOpacity, FlatList, Alert } from 'react-native';
 
 
 interface MedicineProps {
@@ -34,46 +34,33 @@ export default function ReminderScreen() {
         .order('created_at', { ascending: false });
       
       if (error) {
-        console.log('Error fetching medicines:', error);
+        Alert.alert('Erro ao buscar medicamentos');
       } else if (medicines) {
         setMedicine(medicines);
-        console.log('Medicines fetched successfully:', medicines.length);
       }
     } else {
-      console.log('User is not logged in');
+      Alert.alert('Usuário não está logado');
     }
   }
 
-  const handleSendMedicine = async () => {
 
-    const { data: { user } } = await supabase.auth.getUser();
-
-    if (user) {
-      const { data: medicines, error } = await supabase
-        .from('medicines')
-        .insert([
-          { title: 'Paracetamol', ocorrency: '3 vezes ao dia', hour: '08:00' },
-          { title: 'Dipirona', ocorrency: '2 vezes ao dia', hour: '12:00' },
-          { title: 'Ibuprofeno', ocorrency: '1 vez ao dia', hour: '20:00' },
-        ])
-        .select('id, title, ocorrency, hour, user_id, created_at')
-        .single();
-
-      if (error) {
-        console.log('Error inserting medicines:', error);
-      } else {
-        console.log('Medicines inserted successfully:', medicines);
-      }
-    } else {
-      console.log('User is not logged in');
+  const handleDeleteMedicine = async (id: number) => {
+    const { error } = await supabase
+      .from('medicines')
+      .delete()
+      .eq('id', id);
+  
+    if (error) {
+      Alert.alert('Erro ao deletar medicamento');
+      return; 
     }
-
-  }
-
+    
+    Alert.alert('Medicamento deletado com sucesso');
+    handleGetMedicine();
+  };
 
   useEffect(() => {
     handleGetMedicine();
-    console.log('primeiro:', medicine[0]);
   }, []);
 
   const router = useRouter();
@@ -81,10 +68,10 @@ export default function ReminderScreen() {
   const renderMedicine = ({ item }: { item: MedicineProps }) => {
     return (
       <MedicineCard
-        onPress={() => {}}
         title={item.title}
         ocorrency={item.ocorrency}
         time={item.hour}
+        onPress={() => handleDeleteMedicine(item.id)}
       />
     );
   };

@@ -2,16 +2,16 @@ import { Colors } from '@/constants/Colors';
 import { Fonts } from '@/constants/Fonts';
 import styled from 'styled-components/native';
 
-export const InputContainer = styled.View`
-  
+export const CheckBoxContainer = styled.View`
+  flex: 1;
   justify-content: flex-start;
   align-items: flex-start;
-  flex-direction: column;
+  flex-direction: row;
   width: 353px;
-  margin-bottom: 20px;
+  gap: 12px;
 `;
 
-export const InputTitle = styled.Text`
+export const CheckBoxTitle = styled.Text`
   font-size: ${Fonts.label.size}px;
   font-family: ${Fonts.label.fontFamily};
   line-height: ${Fonts.label.lineHeight}px;
@@ -19,12 +19,13 @@ export const InputTitle = styled.Text`
   margin-bottom: 12px;
 `;
 
-export const TextInputBox = styled.View`
-  height: 56px;
-  width: 100%;
+export const CheckBoxInputBox = styled.View`
+  height: 24px;
+  width: 24px;
   border-radius: 5px;
   border-width: 1px;
   border-color: ${Colors.GrayscaleColors.gray400};
+    
   
 `;
 

@@ -8,7 +8,7 @@ export const MedicineCardContainer = styled.View`
   flex-direction: column;
   width: 326px;
   height: 112px;
-  margin: 20px 0;
+  margin: 8px 0;
   border: 1px solid ${Colors.GrayscaleColors.gray600};
   background-color: ${Colors.GrayscaleColors.gray700};
   border-radius: 12px;

@@ -4,7 +4,7 @@ import { HomeButtonCardContainer } from '@/components/homebuttoncard/homebuttonc
 import { Colors } from '@/constants/Colors';
 import { Fonts } from '@/constants/Fonts';
 import { supabase } from '@/services/supabaseClient';
-import { HomeContainerBottomColumn, HomePageContainerBottom, HomePageContainerTop, LogOutColumn, Title, TitleName, TitleUserColumn, UserPortrait } from '@/styles/homePage.style';
+import { HomeContainerBottomColumn, HomePageContainerBottom, HomePageContainerTop, LogOutColumn, Title, TitleName, TitleUserColumn, UserImage, UserPortrait } from '@/styles/homePage.style';
 import { useRouter } from 'expo-router';
 import { LogOut, Star } from 'lucide-react-native';
 import { useEffect } from 'react';
@@ -53,7 +53,9 @@ export default function HomeScreen() {
       <HomePageContainerTop>
         <TitleUserColumn>
           <TitleUserColumn>
-            <UserPortrait></UserPortrait>
+            <UserPortrait>
+              <UserImage source={{uri:'https://yonxdinfhebvzzqumvis.supabase.co/storage/v1/object/public/user_images//user.png'}} style={{borderRadius: 50}} />
+            </UserPortrait>
             <Title>Boas Vindas</Title>
             <TitleName>Júlio Santana</TitleName>
           </TitleUserColumn>

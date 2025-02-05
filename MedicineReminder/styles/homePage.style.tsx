@@ -29,12 +29,13 @@ export const HomePageContainerBottom = styled.View`
 
 export const HomeContainerBottomColumn = styled.View`
   flex: 1;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   width: 100%;
   min-height: 400px;
+  gap: 16px;
 `;
 
 export const LogOutColumn = styled.View`
@@ -75,4 +76,10 @@ export const TitleUserColumn = styled.View`
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+`;
+
+export const UserImage = styled.Image`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
