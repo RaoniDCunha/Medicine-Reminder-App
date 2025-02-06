@@ -33,6 +33,7 @@ const ImageUploadModal = ({ visible, onClose, onImageUpload }: ImageUploadModalP
                 <ModalCloseText>Fechar</ModalCloseText>
             </ModalCloseBox>
 
+            
         </ModalButtonRow>
         
 
