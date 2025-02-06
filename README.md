@@ -33,7 +33,7 @@ Antes de começar, certifique-se de ter o seguinte instalado:
 1.  **Clone o Repositório:**
 
     ```bash
-    git clone <URL_DO_SEU_REPOSITÓRIO>
+    git clone https://github.com/RaoniDCunha/Medicine-Reminder-App.git
     ```
 
 2.  **Navegue até o Diretório do Projeto:**
@@ -83,5 +83,5 @@ Antes de começar, certifique-se de ter o seguinte instalado:
         SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
         ```
 
-        *   Substitua `YOUR_SUPABASE_URL` e `YOUR_SUPABASE_ANON_KEY` pelos valores encontrados no painel do seu projeto Supabase (Settings -> API).
+    *   Substitua `YOUR_SUPABASE_URL` e `YOUR_SUPABASE_ANON_KEY` pelos valores encontrados no painel do seu projeto Supabase (Settings -> API).
 
