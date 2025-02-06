@@ -15,6 +15,7 @@ export default function LoginScreen() {
 
     const [password, setPassword] = useState<string>('');
     const [email, setEmail] = useState<string>('');
+    const [error, setError] = useState<boolean>(false);
 
     //email e senha testes
     const emailTest = '';

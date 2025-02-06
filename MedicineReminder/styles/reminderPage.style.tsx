@@ -79,3 +79,12 @@ export const TitleUserColumn = styled.View`
   justify-content: center;
   flex-direction: column;
 `;
+
+export const AddButtonBox = styled.TouchableOpacity`
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: ${Colors.mainColors.blueBase}; 
+`;

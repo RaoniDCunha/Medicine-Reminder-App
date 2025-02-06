@@ -3,9 +3,9 @@ import { Colors } from '@/constants/Colors';
 import { Fonts } from '@/constants/Fonts';
 import { supabase } from '@/services/supabaseClient';
 
-import { ReminderContainerBottomColumn, ReminderContainerTopColumn, ReminderDescription, ReminderPageContainerBottom, ReminderPageContainerTop, ReminderTitleName } from '@/styles/reminderPage.style';
+import { AddButtonBox, ReminderContainerBottomColumn, ReminderContainerTopColumn, ReminderDescription, ReminderPageContainerBottom, ReminderPageContainerTop, ReminderTitleName } from '@/styles/reminderPage.style';
 import { useRouter } from 'expo-router';
-import { ArrowLeft } from 'lucide-react-native';
+import { ArrowLeft, Plus } from 'lucide-react-native';
 import { useEffect, useState } from 'react';
 import { Image, StyleSheet, Platform,View,Text, TouchableOpacity, FlatList, Alert } from 'react-native';
 
@@ -80,9 +80,15 @@ export default function ReminderScreen() {
     <View style={{ flex: 1 }}>
       <ReminderPageContainerTop>
         <ReminderContainerTopColumn>
+          <View style={{ width: '100%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
           <TouchableOpacity onPress={() => { router.back()}}>
             <ArrowLeft size={24} color={Colors.GrayscaleColors.gray100} />
           </TouchableOpacity>
+          <AddButtonBox onPress={() => { router.push('/form') }}>
+            <Plus size={24} color={Colors.GrayscaleColors.gray800} />
+          </AddButtonBox>
+          </View>
+          
           <ReminderTitleName>Minhas receitas</ReminderTitleName>
           <ReminderDescription>Acompanhe seus medicamentos cadastrados e gerencie lembretes</ReminderDescription>
         </ReminderContainerTopColumn>

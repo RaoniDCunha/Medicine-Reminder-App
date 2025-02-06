@@ -1,15 +1,22 @@
 import Button from '@/components/button/button';
 import HomeButtonCard from '@/components/homebuttoncard/homebuttoncard';
 import { HomeButtonCardContainer } from '@/components/homebuttoncard/homebuttoncard.style';
+import ImageUploadModal from '@/components/ImageUploadModal/imageuploadmodal';
 import { Colors } from '@/constants/Colors';
 import { Fonts } from '@/constants/Fonts';
+import useInformation from '@/hooks/useInformation';
 import { supabase } from '@/services/supabaseClient';
 import { HomeContainerBottomColumn, HomePageContainerBottom, HomePageContainerTop, LogOutColumn, Title, TitleName, TitleUserColumn, UserImage, UserPortrait } from '@/styles/homePage.style';
 import { useRouter } from 'expo-router';
 import { LogOut, Star } from 'lucide-react-native';
-import { useEffect } from 'react';
-import { Image, StyleSheet, Platform,View,Text, Touchable, TouchableOpacity } from 'react-native';
+import { useEffect, useState } from 'react';
+import { Image, StyleSheet, Platform,View,Text, Touchable, TouchableOpacity, Alert } from 'react-native';
 
+
+interface UserInformationProps {
+  user_image: string;
+  user_name: string;
+}
 
 
 
@@ -17,54 +24,65 @@ export default function HomeScreen() {
 
   const router = useRouter();
 
+  const [openImageUploadModal, setOpenImageUploadModal] = useState<boolean>(false);
+
   const handleLogOut = () => {
     supabase.auth.signOut();
     router.replace('/login');
   };
+  
+  const userInformation = useInformation();
+  
 
-  const handleGetMedicine = async () => {
+  const handleUploadImage = async () => {
     const { data: { user } } = await supabase.auth.getUser();
     
-    console.log(user?.id);
-    
+    const userUploadImage = require('../../assets/images/logo.png');
+
     if (user) {
-      const { data: medicines, error } = await supabase
-        .from('medicines')
-        .select('*')
-        .eq('user_id', user.id)
-        .order('created_at', { ascending: false });
-      
-      if (error) {
-        console.log('Error fetching medicines:', error);
+      const { data, error: uploadError } = await supabase.storage
+        .from('user_images')
+        .upload(`${user.id}/${user.id}.png`, userUploadImage, {
+          upsert: true,
+        });
+
+      if (uploadError) {
+        console.log('Error uploading image:', uploadError);
       } else {
-        console.log('Medicines fetched successfullyy:', medicines.length);
+        console.log('Image uploaded successfully:', data);
       }
-    } else {
-      console.log('User is not logged in');
-    }
+  };
+
   }
 
-  useEffect(() => {
-    handleGetMedicine();
-  }, []);
+
+
+
 
   return (
     <View style={{ flex: 1 }}>
       <HomePageContainerTop>
         <TitleUserColumn>
           <TitleUserColumn>
-            <UserPortrait>
-              <UserImage source={{uri:'https://yonxdinfhebvzzqumvis.supabase.co/storage/v1/object/public/user_images//user.png'}} style={{borderRadius: 50}} />
-            </UserPortrait>
+            <View style={{flexDirection: 'row',justifyContent: 'space-between' ,alignItems: 'flex-start',width: '100%'}}>
+              <TouchableOpacity onPress={() => setOpenImageUploadModal(true)}>
+                <UserPortrait>
+                  <UserImage source={{uri: userInformation?.user_image}} style={{borderRadius: 50}} />
+                </UserPortrait>
+              </TouchableOpacity>
+              
+              <LogOutColumn>
+                <TouchableOpacity onPress={() => {handleLogOut()} }>
+                  <LogOut size={24} color={Colors.mainColors.redBase} />
+                </TouchableOpacity>
+              </LogOutColumn>
+
+            </View>
             <Title>Boas Vindas</Title>
-            <TitleName>Júlio Santana</TitleName>
+            <TitleName>{userInformation?.user_name}</TitleName>
           </TitleUserColumn>
         </TitleUserColumn>
-        <LogOutColumn>
-            <TouchableOpacity onPress={() => {handleLogOut()} }>
-                <LogOut size={24} color={Colors.mainColors.redBase} />
-            </TouchableOpacity>
-        </LogOutColumn>
+        
         
       </HomePageContainerTop>
       <HomePageContainerBottom>
@@ -79,7 +97,10 @@ export default function HomeScreen() {
           <Button.TextButton name="Avaliar" />
         </Button>
       </HomePageContainerBottom>
+      <ImageUploadModal visible={openImageUploadModal} onClose={() => setOpenImageUploadModal(false)}  />
     </View>
+
+    
   );
 }
 

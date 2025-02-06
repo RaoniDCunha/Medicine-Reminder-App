@@ -1,6 +1,7 @@
 import Button from '@/components/button/button';
 import CheckBox from '@/components/checkbox/checkbox';
 import Input from '@/components/input/input';
+import TimeInput from '@/components/timeinput/timeinput';
 import { Colors } from '@/constants/Colors';
 import { Fonts } from '@/constants/Fonts';
 import { supabase } from '@/services/supabaseClient';

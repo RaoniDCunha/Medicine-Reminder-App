@@ -45,7 +45,8 @@
     "react-native-webview": "13.12.5",
     "styled-components": "^6.1.14",
     "@react-native-async-storage/async-storage": "1.23.1",
-    "undefined": "react-native-url-polyfill/auto"
+    "undefined": "react-native-url-polyfill/auto",
+    "@react-native-picker/picker": "2.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
