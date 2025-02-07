@@ -49,6 +49,24 @@ export const ModalUploadButtonBox = styled.TouchableOpacity`
   margin-bottom: 20px;
 `;
 
+export const SelectUploadTextBox = styled.Text`
+  font-size: ${Fonts.subheading.size}px;
+  font-family: ${Fonts.subheading.fontFamily};
+  line-height: ${Fonts.subheading.lineHeight}px;
+  color: ${Colors.GrayscaleColors.gray700};
+  margin-bottom: 5px;
+  margin-top: 5px; 
+`;
+
+export const SelectUploadButtonBox = styled.TouchableOpacity`
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 30px;
+  border-radius: 25px;
+  background-color: ${Colors.mainColors.BluseLight};
+  margin-bottom: 20px;
+`;
 
 
 export const ModalUploadButtonText = styled.Text`
@@ -92,8 +110,9 @@ export const TitleUserColumn = styled.View`
   flex-direction: column;
 `;
 
-export const UserImage = styled.Image`
-  width: 100%;
-  height: 100%;
+export const UserUploadImage = styled.Image`
+  width: 200px;
+  height: 200px;
   object-fit: cover;
+  margin-bottom: 20px;
 `;

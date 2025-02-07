@@ -32,30 +32,6 @@ export default function HomeScreen() {
   };
   
   const userInformation = useInformation();
-  
-
-  const handleUploadImage = async () => {
-    const { data: { user } } = await supabase.auth.getUser();
-    
-    const userUploadImage = require('../../assets/images/logo.png');
-
-    if (user) {
-      const { data, error: uploadError } = await supabase.storage
-        .from('user_images')
-        .upload(`${user.id}/${user.id}.png`, userUploadImage, {
-          upsert: true,
-        });
-
-      if (uploadError) {
-        console.log('Error uploading image:', uploadError);
-      } else {
-        console.log('Image uploaded successfully:', data);
-      }
-  };
-
-  }
-
-
 
 
 
