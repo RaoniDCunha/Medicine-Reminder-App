@@ -20,7 +20,7 @@ export default function CheckBox({ boxTitle, placeholder,type,isChecked,onClick 
     <CheckBoxContainer>
         <TouchableOpacity onPress={onClick}>
             <CheckBoxInputBox isChecked={isChecked}>
-                {isChecked && <Check size={24} color={Colors.mainColors.blueBase} />}
+                {isChecked && <Check size={24} color={Colors.GrayscaleColors.gray800} />}
             </CheckBoxInputBox>
         </TouchableOpacity>
             <CheckBoxTitle>

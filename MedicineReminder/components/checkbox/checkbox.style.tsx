@@ -19,14 +19,14 @@ export const CheckBoxTitle = styled.Text`
   margin-bottom: 12px;
 `;
 
-export const CheckBoxInputBox = styled.View`
+export const CheckBoxInputBox = styled.View<{isChecked: boolean}>`
   height: 24px;
   width: 24px;
   border-radius: 5px;
   border-width: 1px;
-  border-color: ${Colors.GrayscaleColors.gray400};
-    
-  
+  border-color: ${({isChecked}: {isChecked: boolean}) => (isChecked ? Colors.mainColors.blueBase : Colors.GrayscaleColors.gray400)};
+  background-color: ${({isChecked}: {isChecked: boolean}) => (isChecked ? Colors.mainColors.blueBase : Colors.GrayscaleColors.gray800)};
+      
 `;
 
 export const TextInput = styled.TextInput`
