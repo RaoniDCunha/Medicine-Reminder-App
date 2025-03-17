@@ -15,7 +15,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#C02636"
-      }
+      },
+      "package": "com.anonymous.MedicineReminder"
     },
     "web": {
       "bundler": "metro",

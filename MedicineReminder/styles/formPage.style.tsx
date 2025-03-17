@@ -1,6 +1,7 @@
 import { Colors } from '@/constants/Colors';
 import { Fonts } from '@/constants/Fonts';
 import styled from 'styled-components/native';
+import { moderateScale, verticalScale } from '@/utils/dimensions';
 
 export const FormPageContainerTop = styled.View`
   flex: 1;
@@ -14,25 +15,25 @@ export const FormPageContainerBottom = styled.View`
   justify-content: center;
   align-items: center;
   background-color: ${Colors.GrayscaleColors.gray800}; 
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
+  border-top-left-radius: ${moderateScale(24)}px;
+  border-top-right-radius: ${moderateScale(24)}px;
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
-  margin-top: -20px;
-  margin-bottom: 14px;
-  padding-left: 16px;
-  padding-right: 16px;
+  margin-top: ${verticalScale(-20)}px;
+  margin-bottom: ${verticalScale(14)}px;
+  padding-left: ${moderateScale(16)}px;
+  padding-right: ${moderateScale(16)}px;
 `;
 
 export const FormContainerTopColumn = styled.View`
   flex: 1;
   align-items: flex-start;
-  padding: 20px;
+  padding: ${verticalScale(20)}px;
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  min-height: 400px;
+  min-height: ${verticalScale(400)}px;
 `;
 
 export const FormContainerBottomColumn = styled.View`
@@ -41,7 +42,7 @@ export const FormContainerBottomColumn = styled.View`
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  min-height: 339px;
+  min-height: ${verticalScale(339)}px;
 `;
 
 export const FormColumn = styled.View`
@@ -50,7 +51,7 @@ export const FormColumn = styled.View`
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  min-height: 339px;
+  min-height: ${verticalScale(339)}px;
 `;
 
 export const FormDescription = styled.Text`
@@ -58,7 +59,7 @@ export const FormDescription = styled.Text`
   font-family: ${Fonts.body.fontFamily};
   line-height: ${Fonts.body.lineHeight}px;
   color: ${Colors.GrayscaleColors.gray200};
-  margin-bottom: 5px;
+  margin-bottom: ${moderateScale(5)}px;
 `;
 
 export const FormTitleName = styled.Text`
@@ -66,15 +67,15 @@ export const FormTitleName = styled.Text`
   font-family: ${Fonts.heading.fontFamily};
   line-height: ${Fonts.heading.lineHeight}px;
   color: ${Colors.mainColors.redBase}; 
-  margin-bottom: 8px;
-  margin-top: 24px;
+  margin-bottom: ${moderateScale(8)}px;
+  margin-top: ${verticalScale(24)}px;
 `;
-
 
 export const TitleUserColumn = styled.View`
   flex: 1;
   align-items: flex-start;
-  padding: 20px;
+  padding: ${verticalScale(20)}px;
   justify-content: center;
   flex-direction: column;
 `;
+

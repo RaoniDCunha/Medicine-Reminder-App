@@ -1,6 +1,7 @@
 import { Colors } from '@/constants/Colors';
 import { Fonts } from '@/constants/Fonts';
 import styled from 'styled-components/native';
+import { horizontalScale, verticalScale, moderateScale } from '@/utils/dimensions';
 
 export const LoginPageContainerTop = styled.View`
   flex: 1;
@@ -14,22 +15,22 @@ export const LoginPageContainerBottom = styled.View`
   justify-content: center;
   align-items: center;
   background-color: ${Colors.GrayscaleColors.gray800}; 
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
+  border-top-left-radius: ${moderateScale(24)}px;
+  border-top-right-radius: ${moderateScale(24)}px;
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
-  margin-top: -20px;
+  margin-top: -${moderateScale(20)}px;
 `;
 
 export const ContainerBottomColumn = styled.View`
   flex: 1;
   align-items: flex-start;
-  padding: 20px;
+  padding: ${moderateScale(20)}px;
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  min-height: 400px;
+  min-height: ${verticalScale(400)}px;
 `;
 
 export const Title = styled.Text`
@@ -37,8 +38,7 @@ export const Title = styled.Text`
   font-family: ${Fonts.subheading.fontFamily};
   height: ${Fonts.subheading.lineHeight}px;
   color: ${Colors.GrayscaleColors.gray100}; 
-  margin-bottom: 40px;
-  margin-top: 20px;
+  margin-bottom: ${moderateScale(40)}px;
+  margin-top: ${moderateScale(20)}px;
 `;
-
 

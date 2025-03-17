@@ -1,6 +1,7 @@
 import { Colors } from '@/constants/Colors';
 import { Fonts } from '@/constants/Fonts';
 import styled from 'styled-components/native';
+import { horizontalScale, verticalScale, moderateScale } from '@/utils/dimensions';
 
 export const ReminderPageContainerTop = styled.View`
   flex: 1;
@@ -14,68 +15,68 @@ export const ReminderPageContainerBottom = styled.View`
   justify-content: center;
   align-items: center;
   background-color: ${Colors.GrayscaleColors.gray800}; 
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
+  border-top-left-radius: ${moderateScale(24)}px;
+  border-top-right-radius: ${moderateScale(24)}px;
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
-  margin-top: -20px;
-  margin-bottom: 14px;
-  padding-left: 16px;
-  padding-right: 16px;
+  margin-top: -${verticalScale(20)}px;
+  margin-bottom: ${verticalScale(14)}px;
+  padding-left: ${horizontalScale(16)}px;
+  padding-right: ${horizontalScale(16)}px;
 `;
 
 export const ReminderContainerTopColumn = styled.View`
   flex: 1;
   align-items: flex-start;
-  padding: 20px;
+  padding: ${moderateScale(20)}px;
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  min-height: 400px;
+  min-height: ${verticalScale(400)}px;
 `;
 
 export const ReminderContainerBottomColumn = styled.View`
   flex: 1;
   align-items: center;
-  padding: 20px;
+  padding: ${moderateScale(20)}px;
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  min-height: 400px;
+  min-height: ${verticalScale(400)}px;
 `;
 
 export const ReminderDescription = styled.Text`
-  font-size: ${Fonts.body.size}px;
+  font-size: ${moderateScale(Fonts.body.size)}px;
   font-family: ${Fonts.body.fontFamily};
-  line-height: ${Fonts.body.lineHeight}px;
+  line-height: ${moderateScale(Fonts.body.lineHeight)}px;
   color: ${Colors.GrayscaleColors.gray200};
-  margin-bottom: 5px;
+  margin-bottom: ${verticalScale(5)}px;
 `;
 
 export const ReminderTitleName = styled.Text`
-  font-size: ${Fonts.heading.size}px;
+  font-size: ${moderateScale(Fonts.heading.size)}px;
   font-family: ${Fonts.heading.fontFamily};
-  line-height: ${Fonts.heading.lineHeight}px;
+  line-height: ${moderateScale(Fonts.heading.lineHeight)}px;
   color: ${Colors.mainColors.blueBase}; 
-  margin-bottom: 8px;
-  margin-top: 24px;
+  margin-bottom: ${verticalScale(8)}px;
+  margin-top: ${verticalScale(24)}px;
 `;
 
 export const UserPortrait = styled.View`
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
+  width: ${moderateScale(64)}px;
+  height: ${moderateScale(64)}px;
   border-radius: 50%;
-  border: 1.5px solid ${Colors.mainColors.blueBase};
-  margin-bottom: 20px;
+  border: ${moderateScale(1.5)}px solid ${Colors.mainColors.blueBase};
+  margin-bottom: ${verticalScale(20)}px;
 `;
 
 export const TitleUserColumn = styled.View`
   flex: 1;
   align-items: flex-start;
-  padding: 20px;
+  padding: ${moderateScale(20)}px;
   justify-content: center;
   flex-direction: column;
 `;
@@ -83,8 +84,8 @@ export const TitleUserColumn = styled.View`
 export const AddButtonBox = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
-  height: 40px;
-  width: 40px;
+  height: ${moderateScale(40)}px;
+  width: ${moderateScale(40)}px;
   border-radius: 50%;
   background-color: ${Colors.mainColors.blueBase}; 
 `;

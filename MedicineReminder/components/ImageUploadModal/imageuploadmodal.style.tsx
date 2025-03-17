@@ -1,6 +1,7 @@
 import { Colors } from '@/constants/Colors';
 import { Fonts } from '@/constants/Fonts';
 import styled from 'styled-components/native';
+import { horizontalScale, verticalScale, moderateScale } from '@/utils/dimensions';
 
 export const ModalContainer = styled.View`
   flex: 1;
@@ -8,26 +9,25 @@ export const ModalContainer = styled.View`
   align-items: center;
   background-color: ${Colors.GrayscaleColors.gray600};
   flex-direction: column; 
-  padding: 0 20px;
+  padding: 0 ${horizontalScale(20)}px;
 `;
-
 
 export const ModalButtonRow = styled.View`
   align-items: center;
   justify-content: center;
   flex-direction: row;
   width: 100%;
-  gap: 10px;
+  gap: ${moderateScale(10)}px;
 `;
 
 export const ModalCloseBox = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   width: 50%;
-  height: 30px;
-  border-radius: 25px;
+  height: ${verticalScale(30)}px;
+  border-radius: ${moderateScale(25)}px;
   border: 1px solid ${Colors.mainColors.redBase};
-  margin-bottom: 20px;
+  margin-bottom: ${verticalScale(20)}px;
 `;
 
 export const ModalCloseText = styled.Text`
@@ -35,18 +35,18 @@ export const ModalCloseText = styled.Text`
   font-family: ${Fonts.subheading.fontFamily};
   line-height: ${Fonts.subheading.lineHeight}px;
   color: ${Colors.mainColors.redBase};
-  margin-bottom: 5px;
-  margin-top: 5px; 
+  margin-bottom: ${moderateScale(5)}px;
+  margin-top: ${moderateScale(5)}px; 
 `;
 
 export const ModalUploadButtonBox = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   width: 50%;
-  height: 30px;
-  border-radius: 25px;
+  height: ${verticalScale(30)}px;
+  border-radius: ${moderateScale(25)}px;
   background-color: ${Colors.mainColors.blueBase};
-  margin-bottom: 20px;
+  margin-bottom: ${verticalScale(20)}px;
 `;
 
 export const SelectUploadTextBox = styled.Text`
@@ -54,28 +54,27 @@ export const SelectUploadTextBox = styled.Text`
   font-family: ${Fonts.subheading.fontFamily};
   line-height: ${Fonts.subheading.lineHeight}px;
   color: ${Colors.GrayscaleColors.gray700};
-  margin-bottom: 5px;
-  margin-top: 5px; 
+  margin-bottom: ${moderateScale(5)}px;
+  margin-top: ${moderateScale(5)}px; 
 `;
 
 export const SelectUploadButtonBox = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 30px;
-  border-radius: 25px;
+  height: ${verticalScale(30)}px;
+  border-radius: ${moderateScale(25)}px;
   background-color: ${Colors.mainColors.BluseLight};
-  margin-bottom: 20px;
+  margin-bottom: ${verticalScale(20)}px;
 `;
-
 
 export const ModalUploadButtonText = styled.Text`
   font-size: ${Fonts.subheading.size}px;
   font-family: ${Fonts.subheading.fontFamily};
   line-height: ${Fonts.subheading.lineHeight}px;
   color: ${Colors.GrayscaleColors.gray800};
-  margin-bottom: 5px;
-  margin-top: 5px; 
+  margin-bottom: ${moderateScale(5)}px;
+  margin-top: ${moderateScale(5)}px; 
 `;
 
 export const ModalTitle = styled.Text`
@@ -83,7 +82,7 @@ export const ModalTitle = styled.Text`
   font-family: ${Fonts.subheading.fontFamily};
   line-height: ${Fonts.subheading.lineHeight}px;
   color: ${Colors.GrayscaleColors.gray200};
-  margin-bottom: 5px;
+  margin-bottom: ${moderateScale(5)}px;
 `;
 
 export const TitleName = styled.Text`
@@ -96,11 +95,11 @@ export const TitleName = styled.Text`
 export const UserPortrait = styled.View`
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: 1.5px solid ${Colors.mainColors.blueBase};
-  margin-bottom: 20px;
+  width: ${moderateScale(64)}px;
+  height: ${moderateScale(64)}px;
+  border-radius: ${moderateScale(50)}px;
+  border: ${moderateScale(1.5)}px solid ${Colors.mainColors.blueBase};
+  margin-bottom: ${verticalScale(20)}px;
 `;
 
 export const TitleUserColumn = styled.View`
@@ -111,8 +110,9 @@ export const TitleUserColumn = styled.View`
 `;
 
 export const UserUploadImage = styled.Image`
-  width: 200px;
-  height: 200px;
+  width: ${moderateScale(200)}px;
+  height: ${moderateScale(200)}px;
   object-fit: cover;
-  margin-bottom: 20px;
+  margin-bottom: ${verticalScale(20)}px;
 `;
+

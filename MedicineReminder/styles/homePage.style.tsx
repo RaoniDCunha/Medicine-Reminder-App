@@ -1,5 +1,6 @@
 import { Colors } from '@/constants/Colors';
 import { Fonts } from '@/constants/Fonts';
+import { horizontalScale, verticalScale, moderateScale } from '@/utils/dimensions';
 import styled from 'styled-components/native';
 
 export const HomePageContainerTop = styled.View`
@@ -8,7 +9,7 @@ export const HomePageContainerTop = styled.View`
   align-items: center;
   background-color: ${Colors.GrayscaleColors.gray600};
   flex-direction: row; 
-  padding: 0 20px;
+  padding: 0 ${horizontalScale(20)}px;
 `;
 
 export const HomePageContainerBottom = styled.View`
@@ -16,26 +17,26 @@ export const HomePageContainerBottom = styled.View`
   justify-content: center;
   align-items: center;
   background-color: ${Colors.GrayscaleColors.gray800}; 
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
+  border-top-left-radius: ${moderateScale(24)}px;
+  border-top-right-radius: ${moderateScale(24)}px;
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
-  margin-top: -20px;
-  margin-bottom: 14px;
-  padding-left: 16px;
-  padding-right: 16px;
+  margin-top: -${moderateScale(20)}px;
+  margin-bottom: ${moderateScale(14)}px;
+  padding-left: ${moderateScale(16)}px;
+  padding-right: ${moderateScale(16)}px;
 `;
 
 export const HomeContainerBottomColumn = styled.View`
   flex: 1;
   align-items: flex-start;
-  padding: 20px;
+  padding: ${moderateScale(20)}px;
   justify-content: flex-start;
   flex-direction: column;
   width: 100%;
-  min-height: 400px;
-  gap: 16px;
+  min-height: ${verticalScale(400)}px;
+  gap: ${moderateScale(16)}px;
 `;
 
 export const LogOutColumn = styled.View`
@@ -50,7 +51,7 @@ export const Title = styled.Text`
   font-family: ${Fonts.body.fontFamily};
   line-height: ${Fonts.body.lineHeight}px;
   color: ${Colors.GrayscaleColors.gray200};
-  margin-bottom: 5px;
+  margin-bottom: ${moderateScale(5)}px;
 `;
 
 export const TitleName = styled.Text`
@@ -63,11 +64,11 @@ export const TitleName = styled.Text`
 export const UserPortrait = styled.View`
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  border: 1.5px solid ${Colors.mainColors.blueBase};
-  margin-bottom: 20px;
+  width: ${moderateScale(64)}px;
+  height: ${moderateScale(64)}px;
+  border-radius: ${moderateScale(50)}px;
+  border: ${moderateScale(1.5)}px solid ${Colors.mainColors.blueBase};
+  margin-bottom: ${moderateScale(20)}px;
 `;
 
 export const TitleUserColumn = styled.View`
@@ -82,3 +83,4 @@ export const UserImage = styled.Image`
   height: 100%;
   object-fit: cover;
 `;
+
