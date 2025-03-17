@@ -19,6 +19,13 @@ O aplicativo oferece:
 *   **Supabase:** Plataforma Backend como Serviço (BaaS) para autenticação de usuários e armazenamento de dados.
 *   **Expo:** Ferramenta para facilitar o desenvolvimento, build e deploy de aplicativos React Native.
 
+## Demonstração
+
+Video demonstrativo da aplicação funcionando: [Link no Youtube](https://youtube.com/shorts/4i8NqUIFr0E?feature=share)
+
+Design Original: [Figma](https://www.figma.com/design/KNIf3bqedCdHQ2msIuoowA/Lembrete-de-Rem%C3%A9dio-(Community)?node-id=3-376&p=f&t=gtpLFJF8oOIhemIR-0)
+
+
 ## Pré-requisitos
 
 Antes de começar, certifique-se de ter o seguinte instalado:
